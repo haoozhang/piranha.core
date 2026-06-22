@@ -1,0 +1,194 @@
+{
+  "ProjectPath": ".",
+  "Summary": {
+    "RulesPassed": 55,
+    "BySeverity": {
+      "optional": 1,
+      "potential": 2,
+      "mandatory": 9
+    },
+    "TotalFindings": 12,
+    "TotalRulesAssessed": 59,
+    "CveCount": 8,
+    "CweCount": 4,
+    "ByCategory": {
+      "Concurrency & Synchronization": 1,
+      "Credentials & Secrets": 1,
+      "Injection Attacks": 1,
+      "File & Path Security": 1,
+      "CVE": 8
+    }
+  },
+  "CveFindings": [
+    {
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Category": "CVE",
+      "Id": "CVE-2026-32933",
+      "Description": "[CVE-2026-32933](https://github.com/advisories/GHSA-rvv3-g6hj-g44x): AutoMapper Vulnerable to Denial of Service (DoS) via Uncontrolled Recursion\n\nSeverity: HIGH\n\nAffected dependencies:\n  - AutoMapper:12.0.1 (top-level, declared at data/Piranha.Data.EF/Piranha.Data.EF.csproj:19)\n\nVulnerable version range: < 15.1.1\n\nRecommended fix:\n  - Upgrade AutoMapper to 15.1.1 or later",
+      "Files": [
+        "data/Piranha.Data.EF/Piranha.Data.EF.csproj:19"
+      ],
+      "Explanation": "[CVE-2026-32933](https://github.com/advisories/GHSA-rvv3-g6hj-g44x): AutoMapper Vulnerable to Denial of Service (DoS) via Uncontrolled Recursion\n\nSeverity: HIGH\n\nAffected dependencies:\n  - AutoMapper:12.0.1 (top-level, declared at data/Piranha.Data.EF/Piranha.Data.EF.csproj:19)\n\nVulnerable version range: < 15.1.1\n\nRecommended fix:\n  - Upgrade AutoMapper to 15.1.1 or later",
+      "Name": "AutoMapper Vulnerable to Denial of Service (DoS) via Uncontrolled Recursion"
+    },
+    {
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Category": "CVE",
+      "Id": "CVE-2023-36414",
+      "Description": "[CVE-2023-36414](https://github.com/advisories/GHSA-5mfx-4wcx-rv27): Azure Identity SDK Remote Code Execution Vulnerability\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Azure.Identity:1.7.0 (transitive, in Piranha.Data.EF.SQLServer, Piranha.AspNetCore.Identity.SQLServer, RazorWeb)\n\nVulnerable version range: < 1.10.2\n\nRecommended fix:\n  - Upgrade Azure.Identity to 1.10.2 or later (already at 1.11.4 in some projects — consolidate to that version)",
+      "Files": [
+        "data/Piranha.Data.EF.SQLServer/Piranha.Data.EF.SQLServer.csproj",
+        "identity/Piranha.AspNetCore.Identity.SQLServer/Piranha.AspNetCore.Identity.SQLServer.csproj",
+        "examples/RazorWeb/RazorWeb.csproj"
+      ],
+      "Explanation": "[CVE-2023-36414](https://github.com/advisories/GHSA-5mfx-4wcx-rv27): Azure Identity SDK Remote Code Execution Vulnerability\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Azure.Identity:1.7.0 (transitive, in Piranha.Data.EF.SQLServer, Piranha.AspNetCore.Identity.SQLServer, RazorWeb)\n\nVulnerable version range: < 1.10.2\n\nRecommended fix:\n  - Upgrade Azure.Identity to 1.10.2 or later (already at 1.11.4 in some projects — consolidate to that version)",
+      "Name": "Azure Identity SDK Remote Code Execution Vulnerability"
+    },
+    {
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Category": "CVE",
+      "Id": "CVE-2024-0056",
+      "Description": "[CVE-2024-0056](https://github.com/advisories/GHSA-98g6-xh36-x2p7): Microsoft.Data.SqlClient and System.Data.SqlClient vulnerable to SQL Data Provider Security Feature Bypass\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Microsoft.Data.SqlClient:5.1.1 (transitive, in Piranha.Data.EF.SQLServer, Piranha.AspNetCore.Identity.SQLServer, RazorWeb)\n\nVulnerable version range: >= 5.0.0, < 5.1.3\n\nRecommended fix:\n  - Upgrade Microsoft.Data.SqlClient to 5.1.3 or later (already at 5.1.6 in some projects — consolidate to that version)",
+      "Files": [
+        "data/Piranha.Data.EF.SQLServer/Piranha.Data.EF.SQLServer.csproj",
+        "identity/Piranha.AspNetCore.Identity.SQLServer/Piranha.AspNetCore.Identity.SQLServer.csproj",
+        "examples/RazorWeb/RazorWeb.csproj"
+      ],
+      "Explanation": "[CVE-2024-0056](https://github.com/advisories/GHSA-98g6-xh36-x2p7): Microsoft.Data.SqlClient and System.Data.SqlClient vulnerable to SQL Data Provider Security Feature Bypass\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Microsoft.Data.SqlClient:5.1.1 (transitive, in Piranha.Data.EF.SQLServer, Piranha.AspNetCore.Identity.SQLServer, RazorWeb)\n\nVulnerable version range: >= 5.0.0, < 5.1.3\n\nRecommended fix:\n  - Upgrade Microsoft.Data.SqlClient to 5.1.3 or later (already at 5.1.6 in some projects — consolidate to that version)",
+      "Name": "Microsoft.Data.SqlClient and System.Data.SqlClient vulnerable to SQL Data Provider Security Feature Bypass"
+    },
+    {
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Category": "CVE",
+      "Id": "CVE-2024-43483",
+      "Description": "[CVE-2024-43483](https://github.com/advisories/GHSA-qj66-m88j-hmgj): Microsoft Security Advisory CVE-2024-43483 | .NET Denial of Service Vulnerability\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Microsoft.Extensions.Caching.Memory:8.0.0 (transitive, in multiple projects)\n\nVulnerable version range: >= 8.0.0-preview.1.23110.8, <= 8.0.0\n\nRecommended fix:\n  - Upgrade Microsoft.Extensions.Caching.Memory to 8.0.1 or later",
+      "Files": [
+        "data/Piranha.Data.EF.SQLite/Piranha.Data.EF.SQLite.csproj",
+        "data/Piranha.Data.EF.SQLServer/Piranha.Data.EF.SQLServer.csproj",
+        "data/Piranha.Data.EF/Piranha.Data.EF.csproj",
+        "examples/MvcWeb/MvcWeb.csproj"
+      ],
+      "Explanation": "[CVE-2024-43483](https://github.com/advisories/GHSA-qj66-m88j-hmgj): Microsoft Security Advisory CVE-2024-43483 | .NET Denial of Service Vulnerability\n\nSeverity: HIGH\n\nAffected dependencies:\n  - Microsoft.Extensions.Caching.Memory:8.0.0 (transitive, in multiple projects)\n\nVulnerable version range: >= 8.0.0-preview.1.23110.8, <= 8.0.0\n\nRecommended fix:\n  - Upgrade Microsoft.Extensions.Caching.Memory to 8.0.1 or later",
+      "Name": "Microsoft Security Advisory CVE-2024-43483 | .NET Denial of Service Vulnerability"
+    },
+    {
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Category": "CVE",
+      "Id": "CVE-2025-6965",
+      "Description": "[CVE-2025-6965](https://github.com/advisories/GHSA-2m69-gcr7-jv3q): SQLitePCLRaw.lib.e_sqlite3 has a vulnerable dependency on SQLite\n\nSeverity: HIGH\n\nAffected dependencies:\n  - SQLitePCLRaw.lib.e_sqlite3:2.1.6 (transitive)\n  - SQLitePCLRaw.lib.e_sqlite3:2.1.10 (transitive)\n\nVulnerable version range: <= 2.1.11\n\nRecommended fix:\n  - Upgrade SQLitePCLRaw.lib.e_sqlite3 to a version > 2.1.11 when available, or monitor for a patched release",
+      "Files": [
+        "data/Piranha.Data.EF.SQLite/Piranha.Data.EF.SQLite.csproj",
+        "identity/Piranha.AspNetCore.Identity.SQLite/Piranha.AspNetCore.Identity.SQLite.csproj",
+        "examples/MvcWeb/MvcWeb.csproj",
+        "examples/RazorWeb/RazorWeb.csproj",
+        "test/Piranha.Tests/Piranha.Tests.csproj"
+      ],
+      "Explanation": "[CVE-2025-6965](https://github.com/advisories/GHSA-2m69-gcr7-jv3q): SQLitePCLRaw.lib.e_sqlite3 has a vulnerable dependency on SQLite\n\nSeverity: HIGH\n\nAffected dependencies:\n  - SQLitePCLRaw.lib.e_sqlite3:2.1.6 (transitive)\n  - SQLitePCLRaw.lib.e_sqlite3:2.1.10 (transitive)\n\nVulnerable version range: <= 2.1.11\n\nRecommended fix:\n  - Upgrade SQLitePCLRaw.lib.e_sqlite3 to a version > 2.1.11 when available, or monitor for a patched release",
+      "Name": "SQLitePCLRaw.lib.e_sqlite3 has a vulnerable dependency on SQLite"
+    },
+    {
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Category": "CVE",
+      "Id": "CVE-2024-38095",
+      "Description": "[CVE-2024-38095](https://github.com/advisories/GHSA-447r-wph3-92pm): Microsoft Security Advisory CVE-2024-38095 | .NET Denial of Service Vulnerability\n\nSeverity: HIGH\n\nAffected dependencies:\n  - System.Formats.Asn1:5.0.0 (transitive, in Piranha.Data.EF.SQLServer, Piranha.AspNetCore.Identity.SQLServer, RazorWeb)\n\nVulnerable version range: >= 5.0.0-preview.7.20364.11, < 6.0.1\n\nRecommended fix:\n  - Upgrade System.Formats.Asn1 to 6.0.1 or later",
+      "Files": [
+        "data/Piranha.Data.EF.SQLServer/Piranha.Data.EF.SQLServer.csproj",
+        "identity/Piranha.AspNetCore.Identity.SQLServer/Piranha.AspNetCore.Identity.SQLServer.csproj",
+        "examples/RazorWeb/RazorWeb.csproj"
+      ],
+      "Explanation": "[CVE-2024-38095](https://github.com/advisories/GHSA-447r-wph3-92pm): Microsoft Security Advisory CVE-2024-38095 | .NET Denial of Service Vulnerability\n\nSeverity: HIGH\n\nAffected dependencies:\n  - System.Formats.Asn1:5.0.0 (transitive, in Piranha.Data.EF.SQLServer, Piranha.AspNetCore.Identity.SQLServer, RazorWeb)\n\nVulnerable version range: >= 5.0.0-preview.7.20364.11, < 6.0.1\n\nRecommended fix:\n  - Upgrade System.Formats.Asn1 to 6.0.1 or later",
+      "Name": "Microsoft Security Advisory CVE-2024-38095 | .NET Denial of Service Vulnerability"
+    },
+    {
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Category": "CVE",
+      "Id": "CVE-2024-43485",
+      "Description": "[CVE-2024-43485](https://github.com/advisories/GHSA-8g4q-xg66-9fp4): Microsoft Security Advisory CVE-2024-43485 | .NET Denial of Service Vulnerability\n\nSeverity: HIGH\n\nAffected dependencies:\n  - System.Text.Json:8.0.0 (transitive, in multiple projects)\n\nVulnerable version range: >= 8.0.0, <= 8.0.4\n\nRecommended fix:\n  - Upgrade System.Text.Json to 8.0.5 or later",
+      "Files": [
+        "core/Piranha.AspNetCore/Piranha.AspNetCore.csproj",
+        "data/Piranha.Data.EF.SQLite/Piranha.Data.EF.SQLite.csproj",
+        "data/Piranha.Data.EF/Piranha.Data.EF.csproj",
+        "examples/MvcWeb/MvcWeb.csproj",
+        "examples/RazorWeb/RazorWeb.csproj"
+      ],
+      "Explanation": "[CVE-2024-43485](https://github.com/advisories/GHSA-8g4q-xg66-9fp4): Microsoft Security Advisory CVE-2024-43485 | .NET Denial of Service Vulnerability\n\nSeverity: HIGH\n\nAffected dependencies:\n  - System.Text.Json:8.0.0 (transitive, in multiple projects)\n\nVulnerable version range: >= 8.0.0, <= 8.0.4\n\nRecommended fix:\n  - Upgrade System.Text.Json to 8.0.5 or later",
+      "Name": "Microsoft Security Advisory CVE-2024-43485 | .NET Denial of Service Vulnerability"
+    },
+    {
+      "Severity": "mandatory",
+      "StoryPoint": 1,
+      "Category": "CVE",
+      "Id": "CVE-2024-30105",
+      "Description": "[CVE-2024-30105](https://github.com/advisories/GHSA-hh2w-p6rv-4g7w): Microsoft Security Advisory CVE-2024-30105 | .NET Denial of Service Vulnerability\n\nSeverity: HIGH\n\nAffected dependencies:\n  - System.Text.Json:8.0.0 (transitive, in multiple projects)\n\nVulnerable version range: >= 7.0.0, < 8.0.4\n\nRecommended fix:\n  - Upgrade System.Text.Json to 8.0.4 or later",
+      "Files": [
+        "core/Piranha.AspNetCore/Piranha.AspNetCore.csproj",
+        "data/Piranha.Data.EF.SQLite/Piranha.Data.EF.SQLite.csproj",
+        "data/Piranha.Data.EF/Piranha.Data.EF.csproj",
+        "examples/MvcWeb/MvcWeb.csproj",
+        "examples/RazorWeb/RazorWeb.csproj"
+      ],
+      "Explanation": "[CVE-2024-30105](https://github.com/advisories/GHSA-hh2w-p6rv-4g7w): Microsoft Security Advisory CVE-2024-30105 | .NET Denial of Service Vulnerability\n\nSeverity: HIGH\n\nAffected dependencies:\n  - System.Text.Json:8.0.0 (transitive, in multiple projects)\n\nVulnerable version range: >= 7.0.0, < 8.0.4\n\nRecommended fix:\n  - Upgrade System.Text.Json to 8.0.4 or later",
+      "Name": "Microsoft Security Advisory CVE-2024-30105 | .NET Denial of Service Vulnerability"
+    }
+  ],
+  "GeneratedAt": "2026-06-22T10:30:17.0000000Z",
+  "CweFindings": [
+    {
+      "Severity": "potential",
+      "StoryPoint": 5,
+      "Category": "Concurrency & Synchronization",
+      "Id": "CWE-567",
+      "Description": "The product does not properly synchronize shared data, such as static variables across threads, which can lead to undefined behavior and unpredictable data changes.",
+      "Files": [
+        "core/Piranha/Extend/Fields/SelectField.cs"
+      ],
+      "Explanation": "In SelectField.cs, the static field 'IsInitialized' (line 34) is declared as a plain bool without the 'volatile' keyword. The InitMetaData() method (lines 174-196) uses double-checked locking: the outer check at line 176 reads 'IsInitialized' without any synchronization, before acquiring the Mutex lock at line 179. Without 'volatile', the .NET memory model does not guarantee that writes to 'IsInitialized' made by one thread are immediately visible to other threads reading outside the lock, potentially allowing multiple threads to pass the outer check and enter the lock simultaneously or observe a stale value. The static '_items' list (line 24) is also written by multiple threads without consistent synchronization at the read path.",
+      "Name": "Unsynchronized Access to Shared Data in a Multithreaded Context"
+    },
+    {
+      "Severity": "potential",
+      "StoryPoint": 3,
+      "Category": "Credentials & Secrets",
+      "Id": "CWE-778",
+      "Description": "When a security-critical event occurs, the product either does not record the event or omits important details about the event when logging it.",
+      "Files": [
+        "core/Piranha.Manager.LocalAuth/Areas/Manager/Pages/Login.cshtml.cs",
+        "core/Piranha.WebApi/PostApiController.cs",
+        "core/Piranha.WebApi/PageApiController.cs"
+      ],
+      "Explanation": "Failed authentication and authorization events are not logged. In Login.cshtml.cs (line 98-102), when login fails (SignIn returns non-Succeeded result), the event is silently discarded — only a UI error message is added, no security log entry is written. Similarly, in the API controllers (e.g., PostApiController.cs, PageApiController.cs), when authorization checks fail and Unauthorized() is returned, there is no log entry recording the unauthorized access attempt, the requesting user, or the requested resource. This makes it difficult to detect brute-force attacks or unauthorized access patterns.",
+      "Name": "Insufficient Logging"
+    },
+    {
+      "Severity": "optional",
+      "StoryPoint": 8,
+      "Category": "File & Path Security",
+      "Id": "CWE-22",
+      "Description": "The product uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the product does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory.",
+      "Files": [
+        "core/Piranha.Local.FileStorage/FileStorageSession.cs"
+      ],
+      "Explanation": "In FileStorageSession.cs, file paths are constructed by string concatenation: '_basePath + path' (lines 48, 50, 73, 94, 112, 114) where 'path' comes from GetResourceName() which builds '{media.Id}/{filename}'. The filename originates from user-supplied upload data. While the Manager service layer applies Path.GetFileName() (Piranha.Manager/Services/MediaService.cs:252) for the upload controller path, the core storage layer (Piranha/Services/Internal/MediaService.cs:247) only replaces spaces, performing no path traversal validation. If the core API is accessed directly, a filename containing '../' sequences under UniqueFolderNames naming could escape the '_basePath' directory boundary.",
+      "Name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+    },
+    {
+      "Severity": "mandatory",
+      "StoryPoint": 13,
+      "Category": "Injection Attacks",
+      "Id": "CWE-502",
+      "Description": "The product deserializes untrusted data without sufficiently ensuring that the resulting data will be valid.",
+      "Files": [
+        "core/Piranha/Cache/Internal/DistributedCache.cs"
+      ],
+      "Explanation": "In DistributedCache.cs (lines 29-32, 42), the Newtonsoft.Json serializer is configured with TypeNameHandling = TypeNameHandling.All. When deserializing data from the distributed cache (e.g., Redis) at line 42 via JsonConvert.DeserializeObject<T>(json, _jsonSettings), the '\\' property embedded in the cached JSON can cause Newtonsoft.Json to instantiate arbitrary .NET types. If an attacker is able to poison the cache backend, they could inject malicious '\\' references leading to Remote Code Execution (RCE). This is a well-known gadget chain attack vector in Newtonsoft.Json with TypeNameHandling.All.",
+      "Name": "Deserialization of Untrusted Data"
+    }
+  ]
+}
