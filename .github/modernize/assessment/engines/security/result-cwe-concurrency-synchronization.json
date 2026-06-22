@@ -1,0 +1,96 @@
+{
+  "status": "success",
+  "execution_time_seconds": 0,
+  "input_name": "CWE - Concurrency & Synchronization",
+  "analysis_method": "LLM",
+  "result": {
+    "evidence": [
+      "Scanned application source files for concurrency & synchronization patterns"
+    ],
+    "finding": "Assessed 6 CWE rules in Concurrency & Synchronization: 1 FOUND, 5 NOT_FOUND",
+    "values": [
+      {
+        "severity": "potential",
+        "storyPoint": 5,
+        "status": "NOT_FOUND",
+        "description": "The product uses the singleton pattern when creating a resource within a multithreaded environment.",
+        "category": "Concurrency & Synchronization",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        },
+        "name": "Use of Singleton Pattern Without Synchronization in a Multithreaded Context",
+        "id": "CWE-543"
+      },
+      {
+        "severity": "potential",
+        "storyPoint": 5,
+        "status": "FOUND",
+        "description": "The product does not properly synchronize shared data, such as static variables across threads, which can lead to undefined behavior and unpredictable data changes.",
+        "category": "Concurrency & Synchronization",
+        "evidence": {
+          "files": [
+            "core/Piranha/Extend/Fields/SelectField.cs"
+          ],
+          "explanation": "In SelectField.cs, the static field 'IsInitialized' (line 34) is declared as a plain bool without the 'volatile' keyword. The InitMetaData() method (lines 174-196) uses double-checked locking: the outer check at line 176 reads 'IsInitialized' without any synchronization, before acquiring the Mutex lock at line 179. Without 'volatile', the .NET memory model does not guarantee that writes to 'IsInitialized' made by one thread are immediately visible to other threads reading outside the lock, potentially allowing multiple threads to pass the outer check and enter the lock simultaneously or observe a stale value. The static '_items' list (line 24) is also written by multiple threads without consistent synchronization at the read path."
+        },
+        "name": "Unsynchronized Access to Shared Data in a Multithreaded Context",
+        "id": "CWE-567"
+      },
+      {
+        "severity": "potential",
+        "storyPoint": 8,
+        "status": "NOT_FOUND",
+        "description": "The product utilizes multiple threads or processes to allow temporary access to a shared resource that can only be exclusive to one process at a time, but it does not properly synchronize these actions, which might cause simultaneous accesses of this resource by multiple threads or processes.",
+        "category": "Concurrency & Synchronization",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        },
+        "name": "Improper Synchronization",
+        "id": "CWE-662"
+      },
+      {
+        "severity": "potential",
+        "storyPoint": 8,
+        "status": "NOT_FOUND",
+        "description": "The product does not properly acquire or release a lock on a resource, leading to unexpected resource state changes and behaviors.",
+        "category": "Concurrency & Synchronization",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        },
+        "name": "Improper Locking",
+        "id": "CWE-667"
+      },
+      {
+        "severity": "potential",
+        "storyPoint": 8,
+        "status": "NOT_FOUND",
+        "description": "The product utilizes a shared resource in a concurrent manner but does not attempt to synchronize access to the resource.",
+        "category": "Concurrency & Synchronization",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        },
+        "name": "Missing Synchronization",
+        "id": "CWE-820"
+      },
+      {
+        "severity": "potential",
+        "storyPoint": 8,
+        "status": "NOT_FOUND",
+        "description": "The product utilizes a shared resource in a concurrent manner, but it does not correctly synchronize access to the resource.",
+        "category": "Concurrency & Synchronization",
+        "evidence": {
+          "files": [],
+          "explanation": ""
+        },
+        "name": "Incorrect Synchronization",
+        "id": "CWE-821"
+      }
+    ],
+    "confidence": "high"
+  },
+  "timestamp": ""
+}

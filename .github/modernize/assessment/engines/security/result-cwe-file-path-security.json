@@ -1,0 +1,83 @@
+{
+  "status": "success",
+  "result": {
+    "confidence": "high",
+    "values": [
+      {
+        "category": "File & Path Security",
+        "evidence": {
+          "explanation": "In FileStorageSession.cs, file paths are constructed by string concatenation: '_basePath + path' (lines 48, 50, 73, 94, 112, 114) where 'path' comes from GetResourceName() which builds '{media.Id}/{filename}'. The filename originates from user-supplied upload data. While the Manager service layer applies Path.GetFileName() (Piranha.Manager/Services/MediaService.cs:252) for the upload controller path, the core storage layer (Piranha/Services/Internal/MediaService.cs:247) only replaces spaces, performing no path traversal validation. If the core API is accessed directly, a filename containing '../' sequences under UniqueFolderNames naming could escape the '_basePath' directory boundary.",
+          "files": [
+            "core/Piranha.Local.FileStorage/FileStorageSession.cs"
+          ]
+        },
+        "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+        "storyPoint": 8,
+        "severity": "optional",
+        "id": "CWE-22",
+        "description": "The product uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the product does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory.",
+        "status": "FOUND"
+      },
+      {
+        "category": "File & Path Security",
+        "evidence": {
+          "explanation": "",
+          "files": []
+        },
+        "name": "Relative Path Traversal",
+        "storyPoint": 5,
+        "severity": "optional",
+        "id": "CWE-23",
+        "description": "The product uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize sequences such as .. that can resolve to a location that is outside of that directory.",
+        "status": "NOT_FOUND"
+      },
+      {
+        "category": "File & Path Security",
+        "evidence": {
+          "explanation": "",
+          "files": []
+        },
+        "name": "Absolute Path Traversal",
+        "storyPoint": 5,
+        "severity": "optional",
+        "id": "CWE-36",
+        "description": "The product uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize absolute path sequences such as /abs/path that can resolve to a location that is outside of that directory.",
+        "status": "NOT_FOUND"
+      },
+      {
+        "category": "File & Path Security",
+        "evidence": {
+          "explanation": "",
+          "files": []
+        },
+        "name": "Unrestricted Upload of File with Dangerous Type",
+        "storyPoint": 8,
+        "severity": "mandatory",
+        "id": "CWE-434",
+        "description": "The product allows the upload or transfer of dangerous file types that are automatically processed within its environment.",
+        "status": "NOT_FOUND"
+      },
+      {
+        "category": "File & Path Security",
+        "evidence": {
+          "explanation": "",
+          "files": []
+        },
+        "name": "Improper Restriction of XML External Entity Reference",
+        "storyPoint": 5,
+        "severity": "optional",
+        "id": "CWE-611",
+        "description": "The product processes an XML document that can contain XML entities with URIs that resolve to documents outside of the intended sphere of control, causing the product to embed incorrect documents into its output.",
+        "status": "NOT_FOUND"
+      }
+    ],
+    "evidence": [
+      "Scanned application source files for file & path security patterns"
+    ],
+    "finding": "Assessed 5 CWE rules in File & Path Security: 1 FOUND, 4 NOT_FOUND"
+  },
+  "input_name": "CWE - File & Path Security",
+  "execution_time_seconds": 0,
+  "analysis_method": "LLM",
+  "timestamp": ""
+}
